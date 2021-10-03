@@ -1,0 +1,33 @@
+{% extends  'base.html' %}
+{% block content %}
+
+<div class="container mt-5 mb-5">
+    <div class="text-center">
+        <img src="{{user.pic.url}}" class="rounded-circle" height="200">
+    </div>
+    <div class="mb-3 mt-4">
+        <label for="exampleInputEmail1" class="form-label">Username</label>
+        <input type="text" name='username' disabled value="{{user.username}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nickname</label>
+        <input type="text" name="nickname" disabled value="{{user.nickname}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Age</label>
+        <input type="number" name='age' disabled value="{{user.age}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Comment</label>
+        <textarea class="form-control" disabled name="comment">{{user.comment}}</textarea>    
+    </div>
+    <div class="text-end mt-3">
+    <a href="{% url 'acc:update' %}"><button type="submit" class="btn btn-success">정보수정</button></a>
+    <a href="{% url 'acc:delete' %}"><button type="submit" class="btn btn-danger">계정삭제</button></a>    
+</div>
+</form>
+</div>
+
+
+
+{% endblock %}
